@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- angular js -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+<h1> Single page application using Angular JS</h1>
+<div ng-controller="myCtrl">
+  Full Name: {{ firstName + " " + lastName }}
+  <p>My first expression: {{ 5 + 5 }}</p>
+  <div ng-init="person={firstName:'John',lastName:'Doe'}">
+  <h2>ng-init is a angular js directive</h2>
+  <p>The Last name is: {{ person.lastName }}</p>
+  <p>The Last name is(using ng-bind directive): <span ng-bind="person.lastName"></span>	</p>
+</div>
+
+<h2>AngularJS Directives</h2>
+<p>
+AngularJS directives are extended HTML attributes with the prefix ng-.<br>
+The ng-app directive initializes an AngularJS application.<br>
+The ng-init directive initializes application data.<br>
+The ng-model directive binds the value of HTML controls (input, select, textarea) to application data.
+</p>
+</div>
+
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+    $scope.firstName = "Ashraful";
+    $scope.lastName = "Kabir";
+});
+</script>
+
+</body>
+</html>
